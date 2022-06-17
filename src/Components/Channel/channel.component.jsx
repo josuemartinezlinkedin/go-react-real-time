@@ -27,13 +27,13 @@
 //above is class way, long time ago now just use functional components
 // and no need to import React anymore but you can if you want
 import React from 'react'
+
 const Channel = (props) => {
 return (
     <>
     <li onClick={()=> {console.log('I was clicked')}}>
         {props.name}
     </li>
-    <p>This is {props.crazy}</p>
     </>
 )
 }

@@ -1,3 +1,3 @@
-import Channel from "./Channel/channel.component";
+import ChannelList from "./ChannelList/channel-list.component"
 
-export default Channel 
+export default ChannelList 

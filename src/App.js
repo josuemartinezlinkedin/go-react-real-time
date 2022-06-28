@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import ChannelList from './Components';
+import ChannelSection from './Components';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
       </header>
-        <ChannelList />
+        <ChannelSection />
     </div>
   );
 }

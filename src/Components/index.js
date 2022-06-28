@@ -1,3 +1,3 @@
-import ChannelList from "./ChannelList/channel-list.component"
+import ChannelSection from "./ChannelSection/channel-section.component";
 
-export default ChannelList 
+export default ChannelSection

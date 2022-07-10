@@ -2,10 +2,15 @@ import React from 'react'
 import Channel from '../Channel/channel.component'
 import ChannelForm from '../ChannelForm/channel-form.component'
 
-const ChannelList = ({list}) => {
+type ChannelListProps = {
+  list: object[]
+}
+
+const ChannelList = ({list}: ChannelListProps) => {
   
 
-  let channelComponents = list.map( (channelInList) => { 
+  let channelComponents = list.map((channelInList: any) => {
+
   return ( <Channel key={channelInList.name} name={channelInList.name} />
   )}
   )
@@ -18,5 +23,6 @@ const ChannelList = ({list}) => {
     </div>
   )
 }
+
 
 export default ChannelList

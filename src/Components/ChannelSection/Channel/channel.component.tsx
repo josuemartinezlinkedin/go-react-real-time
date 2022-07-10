@@ -29,16 +29,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Channel = (props) => {
+type ChannelProps = {
+    name: string
+}
+
+const Channel = ({name}: ChannelProps) => {
 return (
     <>
     <li onClick={()=> {console.log('I was clicked')}}>
-        {props.name}
+        {name}
     </li>
     </>
 )
 }
-Channel.propTypes = {
-    name: PropTypes.string.isRequired
+
+type Random = {
+    num: number
 }
+
+let Random: Random = {
+    num: 21
+
+}
+
+
 export default Channel

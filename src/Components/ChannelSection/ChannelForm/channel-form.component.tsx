@@ -1,13 +1,17 @@
-import { useState } from 'react'
+import { ChangeEventHandler, useState } from 'react'
 import React from 'react'
 
-const ChannelForm = ({addChannel}) => {
+type ChannelFormProps = {
+  addChannel: (name: string) => void;
+}
+
+const ChannelForm = ({addChannel}: ChannelFormProps) => {
   const [channelName, setChannelName] = useState('')
  
-function onChange (e) {
+  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
   setChannelName(e.target.value)
 }
-function onSubmit(e) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
   addChannel(channelName)
   setChannelName('')
   e.preventDefault()

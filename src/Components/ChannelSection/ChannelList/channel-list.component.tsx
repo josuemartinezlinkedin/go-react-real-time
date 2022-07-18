@@ -11,7 +11,7 @@ const ChannelList = ({list}: ChannelListProps) => {
 
   let channelComponents = list.map((channelInList: any) => {
 
-  return ( <Channel key={channelInList.name} name={channelInList.name} />
+  return ( <Channel key={channelInList.name} channel={channelInList} />
   )}
   )
 

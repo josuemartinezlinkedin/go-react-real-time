@@ -26,30 +26,34 @@
 
 //above is class way, long time ago now just use functional components
 // and no need to import React anymore but you can if you want
-import React from 'react'
-import PropTypes from 'prop-types'
+import { captureRejectionSymbol } from 'events';
+import React, { useState } from 'react'
 
-type ChannelProps = {
+type channel = {
     name: string
 }
 
-const Channel = ({name}: ChannelProps) => {
+type ChannelProps = {
+    channel: channel;
+}
+
+
+const Channel = ({channel}: ChannelProps) => {
+
+    const onClick: React.MouseEventHandler<HTMLLIElement> = (e: React.MouseEvent) => {
+        e.preventDefault();
+        alert("i've been clicked")
+    }
+
 return (
     <>
-    <li onClick={()=> {console.log('I was clicked')}}>
-        {name}
+    <li className='channel-list-item' onClick={onClick}>
+        <a className="channel_name">
+            {channel.name}
+        </a>
     </li>
     </>
 )
-}
-
-type Random = {
-    num: number
-}
-
-let Random: Random = {
-    num: 21
-
 }
 
 

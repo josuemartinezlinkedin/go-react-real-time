@@ -1,30 +1,31 @@
 import ChannelForm from "./ChannelForm/channel-form.component";
 import ChannelList from "./ChannelList/channel-list.component";
-import { useState, useEffect, FC, SetStateAction } from "react";
+import { useEffect, useState} from "react";
 
+import './channel-section.styles.css'
+type nameOfChannel = {
+    name: string;
+}
+type ChannelSectionProps = {
+    addChannel: (name: string) => void;
+    channelList: nameOfChannel[]
+}
 
-const ChannelSection = () => {
-    let channels = [
-        { name: 'Hardware Support'},
-        { name: 'Software Support'},
-    ]
+const ChannelSection = ({addChannel, channelList}:ChannelSectionProps) => {
 
-    const [channelList, setChannelList] = useState<object[]>(channels)
-    const addChannel: (name: string) => void = (name) => {
-        // let filteredName = channelList.filter(channel => channel.name !== name);
-        // setChannelList(
-        //     () => [...filteredName, {name:name}]
-        // )
-        setChannelList((current) => [...current, { name: name }])
-    }        // setChannelList((current) => [...current,{name: name}])
 
     
 
 return (
-    <div>
-        <ChannelList list={channelList}/>
-        <ChannelForm addChannel={addChannel} />
-    </div>
+    <div className="channel-section">
+        <div className="channel-section_header">
+            <h4 className="channel-section_header-tag">Channel Section</h4>
+        </div>
+        <div className="channel-section-area">
+            <ChannelList list={channelList} />
+            <ChannelForm addChannel={addChannel} />
+        </div>
+    </div> 
 )
 }
 

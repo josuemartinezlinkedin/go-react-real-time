@@ -68,12 +68,13 @@ code {
   position: relative;
   display: flex;
   flex-direction: row;
+  height: 16px;
   border: 1.5px solid darkcyan;
     background-color: darkcyan;
     color: rgb(6, 1, 93);
     z-index: 289;
-    margin-left: 48vh;
-    margin-top: -3.3vh;
+    margin-left: 25.5vh;
+    margin-top: -1.8vh;
     cursor: pointer;
 }
 .channel-form_bttn:hover {

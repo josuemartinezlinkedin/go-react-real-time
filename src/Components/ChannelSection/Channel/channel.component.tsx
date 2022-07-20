@@ -26,7 +26,6 @@
 
 //above is class way, long time ago now just use functional components
 // and no need to import React anymore but you can if you want
-import { captureRejectionSymbol } from 'events';
 import React, { useState } from 'react'
 
 type channel = {
@@ -35,20 +34,25 @@ type channel = {
 
 type ChannelProps = {
     channel: channel;
+    setActiveChannel: React.Dispatch<React.SetStateAction<string>>
+    activeChannel: string
 }
 
 
-const Channel = ({channel}: ChannelProps) => {
+const Channel = ({channel, setActiveChannel, activeChannel}: ChannelProps) => {
 
     const onClick: React.MouseEventHandler<HTMLLIElement> = (e: React.MouseEvent) => {
         e.preventDefault();
-        alert("i've been clicked")
+        alert("i've been clicked");
+        return setActiveChannel(channel.name)
     }
+
+    const active = channel.name ===  activeChannel ? 'channel_name-active' : 'channel_name'
 
 return (
     <>
     <li className='channel-list-item' onClick={onClick}>
-        <a className="channel_name">
+        <a className={active}>
             {channel.name}
         </a>
     </li>

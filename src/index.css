@@ -49,16 +49,31 @@ code {
 
 .channel_name{
   padding: 10px;
+  color: black;
+  width: fit-content;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.channel_name:hover {
+  color: antiquewhite;
+}
+.channel_name-active {
+  padding: 10px;
   color:antiquewhite;
   width: fit-content;
   border-radius: 10px;
   margin-bottom: 15px;
   cursor: pointer;
 }
+
+
+
 .channel-list-item{
   list-style-type: none;
 
 }
+
 .channel-form .channel-form_input {
   border: none;
   outline: none;
@@ -83,11 +98,6 @@ code {
   color:hotpink
 }
 
-/* .channel-form_input{
-  width: 200px;
-    height: 20px;
-    padding-right: 50px;
-} */
 
 
 

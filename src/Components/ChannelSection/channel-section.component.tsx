@@ -8,10 +8,12 @@ type nameOfChannel = {
 }
 type ChannelSectionProps = {
     addChannel: (name: string) => void;
-    channelList: nameOfChannel[]
+    channelList: nameOfChannel[];
+    setActiveChannel: React.Dispatch<React.SetStateAction<string>>
+    activeChannel: string;
 }
 
-const ChannelSection = ({addChannel, channelList}:ChannelSectionProps) => {
+const ChannelSection = ({addChannel, channelList, activeChannel, setActiveChannel}:ChannelSectionProps) => {
 
 
     
@@ -22,7 +24,7 @@ return (
             <h4 className="channel-section_header-tag">Channel Section</h4>
         </div>
         <div className="channel-section-area">
-            <ChannelList list={channelList} />
+            <ChannelList listOfChannels={channelList} setActiveChannel={setActiveChannel} activeChannel={activeChannel}/>
             <ChannelForm addChannel={addChannel} />
         </div>
     </div> 

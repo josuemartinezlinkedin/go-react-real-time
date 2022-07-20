@@ -1,17 +1,17 @@
-import React from 'react'
 import Channel from '../Channel/channel.component'
-import ChannelForm from '../ChannelForm/channel-form.component'
 
 type ChannelListProps = {
-  list: object[]
+  listOfChannels: object[];
+  setActiveChannel: React.Dispatch<React.SetStateAction<string>>
+  activeChannel: string
 }
 
-const ChannelList = ({list}: ChannelListProps) => {
+const ChannelList = ({listOfChannels, setActiveChannel, activeChannel}: ChannelListProps) => {
   
 
-  let channelComponents = list.map((channelInList: any) => {
+  let channelComponents = listOfChannels.map((channelInList: any) => {
 
-  return ( <Channel key={channelInList.name} channel={channelInList} />
+    return (<Channel activeChannel={activeChannel} setActiveChannel={setActiveChannel} key={channelInList.name} channel={channelInList} />
   )}
   )
 

@@ -23,7 +23,7 @@ code {
 .App {
   display: flex;
     margin: 15px;
-    background-color: black;
+    background-color: #303030;
 }
 .app_row {
   display: flex;
@@ -146,7 +146,6 @@ max-height: 85vh;
 
 .messages-section_header {
   text-align: center;
-  /* border: 3px inset black; */
 }
 .channel_name_messages {
   padding: 10px;
@@ -155,66 +154,22 @@ max-height: 85vh;
   margin-bottom: 15px;
   cursor: pointer;
   text-align: center;
-  border: 3px inset black;
+  border: 3px inset #303030;
 }
-/* .messages_header-tag {} */
-/*
-
-{
-  padding: 10px;
-  color: black;
-  width: fit-content;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-/*
-.channel_name:hover {
-  color: antiquewhite;
-}
-
-.channel_name-active {
-  padding: 10px;
-  color: antiquewhite;
-  width: fit-content;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-
-
-
-.channel-list-item {
-  list-style-type: none;
-
-}
-
-.channel-form .channel-form_input {
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.channel-form_bttn {
-  position: relative;
-  display: fle
-  x;
-  flex-direction: row;
-  height: 16px;
-  border: 1.5px solid darkcyan;
+.message-form_bttn {
   background-color: darkcyan;
   color: rgb(6, 1, 93);
-  z-index: 289;
-  margin-left: 25.5vh;
-  margin-top: -1.8vh;
   cursor: pointer;
 }
 
-.channel-form_bttn:hover {
+.message-form_bttn:hover {
   border: 1.5px solid aqua;
   background-color: aquamarine;
   color: hotpink
-} */ 
+}
+
+
+
 
 /*
 
@@ -256,5 +211,5 @@ max-height: 85vh;
   margin-bottom: 15px;
   cursor: pointer;
   text-align: center;
-  border: 3px inset black;
+  border: 3px inset #303030;
 }

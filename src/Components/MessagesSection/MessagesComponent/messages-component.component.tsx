@@ -1,8 +1,18 @@
-import React from 'react'
 
-function MessagesComponent() {
+type messages = {
+  // userName?: string,
+  message: string
+}
+
+function MessagesComponent({message}: messages) {
   return (
-    <div>MessagesComponent</div>
+    <>
+      <li className='channel-list-item'>
+        <a>
+          {message}
+        </a>
+      </li>
+    </>
   )
 }
 

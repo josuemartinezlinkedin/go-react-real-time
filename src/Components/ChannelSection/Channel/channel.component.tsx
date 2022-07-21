@@ -26,7 +26,7 @@
 
 //above is class way, long time ago now just use functional components
 // and no need to import React anymore but you can if you want
-import React, { useState } from 'react'
+import React from 'react'
 
 type channel = {
     name: string

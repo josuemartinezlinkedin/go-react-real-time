@@ -11,7 +11,8 @@ const ChannelList = ({listOfChannels, setActiveChannel, activeChannel}: ChannelL
 
   let channelComponents = listOfChannels.map((channelInList: any) => {
 
-    return (<Channel activeChannel={activeChannel} setActiveChannel={setActiveChannel} key={channelInList.name} channel={channelInList} />
+    return (<Channel activeChannel={activeChannel} setActiveChannel={setActiveChannel} 
+      key={channelInList.name} channel={channelInList} />
   )}
   )
 

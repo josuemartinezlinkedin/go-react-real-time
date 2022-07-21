@@ -12,7 +12,7 @@ type messages = {
 
 function MessagesSection({activeChannel}: MessagesSectionProps) {
     const [addMessage, setAddMessage] = useState<messages[]>([])
-    
+
     const addMessages: (message: string) => void = (message) => {
         if (!addMessage.some(values => values.message === message)) {
             setAddMessage((current) => [...current, { message: message }])
@@ -27,9 +27,9 @@ function MessagesSection({activeChannel}: MessagesSectionProps) {
         </div>
         <div className="message-section_messages_box" >
             <h3 className='channel_name_messages'>{selectChannel}</h3>
+            <MessageBox addMessages={addMessages} />
+            <MessageList messageList={addMessage} />
         </div>
-        <MessageBox addMessages={addMessages}/>
-        <MessageList messageList={addMessage}/>
     </div>
   )
 }

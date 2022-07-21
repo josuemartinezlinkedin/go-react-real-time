@@ -7,19 +7,23 @@ type MessagesSectionProps = {
 }
 type messages = {
     // userName?: string,
-    message: string
+    message: string;
 }
+//active chat =  map(key=activeChannel, map messagesList)
 
-function MessagesSection({activeChannel}: MessagesSectionProps) {
+function MessagesSection({activeChannel}: MessagesSectionProps) {  
+
     const [addMessage, setAddMessage] = useState<messages[]>([])
-
+    
     const addMessages: (message: string) => void = (message) => {
         if (!addMessage.some(values => values.message === message)) {
             setAddMessage((current) => [...current, { message: message }])
         }
         else { alert("TRY A DIFFERENT NAME YOU TWAT!!") }
     }
-    const selectChannel = activeChannel.length === 0 ? 'select channel' : activeChannel
+    const selectChannel = activeChannel.length === 0 ? 'select a channel to start chatting'.toUpperCase() : activeChannel
+    const inputBoxAvailability = selectChannel === activeChannel ? <MessageBox addMessages={addMessages} /> : ''
+        
   return (
     <div className='messages-section'>
         <div className="messages-section_header">
@@ -27,7 +31,7 @@ function MessagesSection({activeChannel}: MessagesSectionProps) {
         </div>
         <div className="message-section_messages_box" >
             <h3 className='channel_name_messages'>{selectChannel}</h3>
-            <MessageBox addMessages={addMessages} />
+             {inputBoxAvailability }
             <MessageList messageList={addMessage} />
         </div>
     </div>

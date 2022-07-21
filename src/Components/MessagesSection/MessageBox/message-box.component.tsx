@@ -32,8 +32,8 @@ function MessageBox({addMessages}:MessageBoxProps) {
         <input className='message-form_input' onChange={onChange} value={aMessage} 
         placeholder="Add Message" type="text" name="addToMessages" id="props.message" />
         
-        <button className='message-form_bttn' type="submit" form="channelform" 
-        value="Submit">Add Me!!</button>
+        <button className='message-form_bttn' type="submit" form="message-form" 
+        value="Submit" >Add Me!!</button>
     </form>
     </>
   )

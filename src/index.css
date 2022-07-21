@@ -22,10 +22,15 @@ code {
 }
 .App {
   display: flex;
-  flex-direction: row;
+    margin: 15px;
+    background-color: black;
+}
+.app_row {
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-around;
+  width: 30%;
+  justify-content: center;
 }
 
 /*
@@ -40,13 +45,11 @@ code {
 */
 
 .channel-section {
-    width: 450px;
-    height: 80vh;
-    margin: 10px 7px;
+    width: 90vh;
+    height: 45vh;
+    margin: 10px 5px;
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
     box-shadow: 2px 2px 20px rgba(0,0,0,0.8);
     background-color:antiquewhite;
 }
@@ -132,15 +135,13 @@ code {
 
 
 .messages-section {
-    width: 450px;
-    height: 80vh;
-    margin: 10px 7px;
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
+  margin-top: 14px;
+  margin-bottom: 14px;
+    margin-left: 35vh;
+    width: 100vh;
+    height: 93vh;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
-    background-color: antiquewhite
+    background-color: antiquewhite;
 }
 
 .message-section_messages_box {
@@ -148,7 +149,7 @@ background-color: grey;
 padding: 20px 25px;
 height: 100%;
 overflow: auto;
-max-height: 74vh;
+max-height: 85vh;
 }
 
 .messages-section_header {
@@ -204,7 +205,8 @@ max-height: 74vh;
 
 .channel-form_bttn {
   position: relative;
-  display: flex;
+  display: fle
+  x;
   flex-direction: row;
   height: 16px;
   border: 1.5px solid darkcyan;
@@ -222,3 +224,45 @@ max-height: 74vh;
   color: hotpink
 } */ 
 
+/*
+
+******************************************************************************************************************************
+******************************************************************************************************************************
+******************************************************************************************************************************
+                                Message Section Component styles
+******************************************************************************************************************************
+******************************************************************************************************************************
+******************************************************************************************************************************
+*/
+
+.user-section {
+  width: 90vh;
+    height: 45vh;
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+    background-color: antiquewhite;
+}
+
+.user-section_messages_box {
+  background-color: grey;
+  padding: 20px 25px;
+  height: 100%;
+  overflow: auto;
+  max-height: 74vh;
+}
+
+.user-section_header {
+  text-align: center;
+}
+
+.user_name_messages {
+  padding: 10px;
+  color: antiquewhite;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  text-align: center;
+  border: 3px inset black;
+}

@@ -23,10 +23,8 @@ const ChannelForm = ({addChannel}: ChannelFormProps) => {
     <>
     <form className='channel-form' id="channelform" onSubmit={onSubmit}>
         <input className='channel-form_input' onChange={onChange} value={channelName} placeholder="Add Channel" type="text" name="addToList" id="props.name" />
-    </form>
-    <div>
         <button className='channel-form_bttn' type="submit" form="channelform" value="Submit">Add Me!!</button>
-    </div>
+    </form>
     </>
   )
 }

@@ -13,34 +13,53 @@ body {
     */
     height: 100vh;
     background-color: darkgray;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+/*
+
+******************************************************************************************************************************
+******************************************************************************************************************************
+******************************************************************************************************************************
+                                Channel Section Component styles
+******************************************************************************************************************************
+******************************************************************************************************************************
+******************************************************************************************************************************
+*/
 
 .channel-section {
     width: 450px;
     height: 80vh;
+    margin: 10px 7px;
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 2px 20px rgba(0,0,0,0.8);
-    background-color:antiquewhite
-}
-.channel-section-area {
+    flex-basis: 100%;
     flex: 1;
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.8);
+    background-color:antiquewhite;
+}
+.channel-section_channel_list {
     background-color: grey;
     padding: 20px 25px;
     overflow: auto;
     max-height: 74vh;
+    height: 100%;
 }
 .channel-section_header {
   text-align: center;
-    border: 3px outset black;
+    /* border: 3px outset black; */
 }
 
 /* .channel-section_header-tag {
@@ -65,6 +84,7 @@ code {
   border-radius: 10px;
   margin-bottom: 15px;
   cursor: pointer;
+  text-align: center;
 }
 
 
@@ -99,7 +119,106 @@ code {
 }
 
 
+/*
+
+******************************************************************************************************************************
+******************************************************************************************************************************
+******************************************************************************************************************************
+                                Message Section Component styles
+******************************************************************************************************************************
+******************************************************************************************************************************
+******************************************************************************************************************************
+*/
+
+
+.messages-section {
+    width: 450px;
+    height: 80vh;
+    margin: 10px 7px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+    background-color: antiquewhite
+}
+
+.message-section_messages_box {
+background-color: grey;
+padding: 20px 25px;
+height: 100%;
+overflow: auto;
+max-height: 74vh;
+}
+
+.messages-section_header {
+  text-align: center;
+  /* border: 3px inset black; */
+}
+.channel_name_messages {
+  padding: 10px;
+  color: antiquewhite;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  text-align: center;
+  border: 3px inset black;
+}
+/* .messages_header-tag {} */
+/*
+
+{
+  padding: 10px;
+  color: black;
+  width: fit-content;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+/*
+.channel_name:hover {
+  color: antiquewhite;
+}
+
+.channel_name-active {
+  padding: 10px;
+  color: antiquewhite;
+  width: fit-content;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
 
 
 
+.channel-list-item {
+  list-style-type: none;
+
+}
+
+.channel-form .channel-form_input {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.channel-form_bttn {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 16px;
+  border: 1.5px solid darkcyan;
+  background-color: darkcyan;
+  color: rgb(6, 1, 93);
+  z-index: 289;
+  margin-left: 25.5vh;
+  margin-top: -1.8vh;
+  cursor: pointer;
+}
+
+.channel-form_bttn:hover {
+  border: 1.5px solid aqua;
+  background-color: aquamarine;
+  color: hotpink
+} */ 
 

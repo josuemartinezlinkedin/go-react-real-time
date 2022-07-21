@@ -1,3 +1,4 @@
 import ChannelSection from "./ChannelSection/channel-section.component";
+import MessagesSection from "./MessagesSection/messages-section.component";
 
-export default ChannelSection
+export {ChannelSection, MessagesSection}

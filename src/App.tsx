@@ -1,6 +1,6 @@
 import './App.css';
 import {useState, useRef} from 'react'
-import ChannelSection from './Components';
+import {ChannelSection, MessagesSection} from './Components';
 
 type nameOfChannel = {
   name: string;
@@ -26,6 +26,7 @@ function App() {
     <div className="App">
       <header className="App-header"/>
         <ChannelSection addChannel={addChannel} channelList={channelList} setActiveChannel={setActiveChannel} activeChannel={activeChannel}/>
+      <MessagesSection activeChannel={activeChannel} />
     </div>
   );
 }

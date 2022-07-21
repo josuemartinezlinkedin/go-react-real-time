@@ -23,7 +23,7 @@ return (
         <div className="channel-section_header">
             <h4 className="channel-section_header-tag">Channel Section</h4>
         </div>
-        <div className="channel-section-area">
+        <div className="channel-section_channel_list">
             <ChannelList listOfChannels={channelList} setActiveChannel={setActiveChannel} activeChannel={activeChannel}/>
             <ChannelForm addChannel={addChannel} />
         </div>

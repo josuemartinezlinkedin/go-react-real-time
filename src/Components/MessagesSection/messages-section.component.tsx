@@ -21,6 +21,7 @@ function MessagesSection({activeChannel}: MessagesSectionProps) {
         if (!addMessage.some(values => values.message === message)) {
             setAddMessage((current) => [...current, { message: message }])
             setMessageToMap(messageToMap.set(activeChannel, addMessage))
+            console.log(messageToMap)
         }
         else { alert("TRY A DIFFERENT NAME YOU TWAT!!") }
     }
@@ -34,8 +35,9 @@ function MessagesSection({activeChannel}: MessagesSectionProps) {
     messagesMap.set(activeChannel, addMessage) 
     : setAddMessage(messagesMap.get(activeChannel) ?? []) 
     setMessageToMap(messagesMap)
+    console.log(messagesMap)
     },[activeChannel])
-    
+
     const inputBoxAvailability = selectChannel === activeChannel ? <MessageBox addMessages={addMessages} /> : ''
   return (
     <div className='messages-section'>

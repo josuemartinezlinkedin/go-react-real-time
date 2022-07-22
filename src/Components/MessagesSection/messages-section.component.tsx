@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import MessageBox from './MessageBox/message-box.component'
 import MessageList from './MessageList/message-list.component'
 
@@ -9,21 +9,34 @@ type messages = {
     // userName?: string,
     message: string;
 }
-//active chat =  map(key=activeChannel, map messagesList)
+let messagesMap = new Map<string, messages[]>()
 
 function MessagesSection({activeChannel}: MessagesSectionProps) {  
 
     const [addMessage, setAddMessage] = useState<messages[]>([])
+    const [messageToMap, setMessageToMap] = useState<Map<string, messages[]>>(messagesMap)
+
     
     const addMessages: (message: string) => void = (message) => {
         if (!addMessage.some(values => values.message === message)) {
             setAddMessage((current) => [...current, { message: message }])
+            setMessageToMap(messageToMap.set(activeChannel, addMessage))
         }
         else { alert("TRY A DIFFERENT NAME YOU TWAT!!") }
     }
     const selectChannel = activeChannel.length === 0 ? 'select a channel to start chatting'.toUpperCase() : activeChannel
+    //active chat =  map(key=activeChannel, map messagesList)
+    //const myMap = new map(activeChannel, messages[])
+    //if activeChannel changes then wipe messages and start new with a push on every message
+    
+    useEffect(()=>{
+    messagesMap.get(activeChannel) === undefined ? 
+    messagesMap.set(activeChannel, addMessage) 
+    : setAddMessage(messagesMap.get(activeChannel) ?? []) 
+    setMessageToMap(messagesMap)
+    },[activeChannel])
+    
     const inputBoxAvailability = selectChannel === activeChannel ? <MessageBox addMessages={addMessages} /> : ''
-        
   return (
     <div className='messages-section'>
         <div className="messages-section_header">

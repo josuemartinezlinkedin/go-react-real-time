@@ -5,7 +5,8 @@ type messages = {
     message: string
 }
 type MessageBoxProps = {
-    addMessages: (message: string) => void
+    addMessages: (message: string) => void;
+    // messagesMap: Map<string, messages[]>
 }
 
 function MessageBox({addMessages}:MessageBoxProps) {
@@ -22,7 +23,6 @@ function MessageBox({addMessages}:MessageBoxProps) {
     const onSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent) => {
         e.preventDefault()
         addMessages(aMessage)
-
         setAMessage('')
     }
   

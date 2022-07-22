@@ -12,8 +12,6 @@ type MessageListProps = {
 const MessageList = ({messageList}:MessageListProps) => {
     
     let messageText = messageList.map((messageInList: messages) => {
-        console.log(messageInList.message)
-
         return (<MessagesComponent
             key={messageInList.message} message={messageInList.message} />
         )

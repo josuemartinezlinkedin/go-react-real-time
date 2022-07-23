@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import MessageBox from './MessageBox/message-box.component'
 import MessageList from './MessageList/message-list.component'
 
@@ -12,33 +12,37 @@ type messages = {
 let messagesMap = new Map<string, messages[]>()
 
 function MessagesSection({activeChannel}: MessagesSectionProps) {  
-
+    //useState
     const [addMessage, setAddMessage] = useState<messages[]>([])
-    const [messageToMap, setMessageToMap] = useState<Map<string, messages[]>>(messagesMap)
+    const [messageToMap] = useState<Map<string, messages[]>>(messagesMap)
+    //useRef
+    const messageRef = useRef<HTMLInputElement | null> (null)
 
-    
+
+    // I could turn this into a generic
     const addMessages: (message: string) => void = (message) => {
-        if (!addMessage.some(values => values.message === message)) {
-            setAddMessage((current) => [...current, { message: message }])
-            setMessageToMap(messageToMap.set(activeChannel, addMessage))
-            console.log(messageToMap)
-        }
-        else { alert("TRY A DIFFERENT NAME YOU TWAT!!") }
+          setAddMessage((current) => [...current, { message: message }])
+          messageToMap.set(activeChannel, [...addMessage, {message: message}])
     }
-    const selectChannel = activeChannel.length === 0 ? 'select a channel to start chatting'.toUpperCase() : activeChannel
+    const selectChannel = activeChannel.length === 0 ? 'select a channel to start chatting'.toUpperCase() : 
+    activeChannel
     //active chat =  map(key=activeChannel, map messagesList)
     //const myMap = new map(activeChannel, messages[])
     //if activeChannel changes then wipe messages and start new with a push on every message
-    
     useEffect(()=>{
-    messagesMap.get(activeChannel) === undefined ? 
-    messagesMap.set(activeChannel, addMessage) 
-    : setAddMessage(messagesMap.get(activeChannel) ?? []) 
-    setMessageToMap(messagesMap)
-    console.log(messagesMap)
+
+    },[])    
+    useEffect(()=>{
+        if (messageToMap.get(activeChannel) === undefined) {
+            setAddMessage([])
+            messagesMap.set(activeChannel, addMessage) 
+        } else { 
+     setAddMessage(messagesMap.get(activeChannel) ?? [])
+    }
+
     },[activeChannel])
 
-    const inputBoxAvailability = selectChannel === activeChannel ? <MessageBox addMessages={addMessages} /> : ''
+    const inputBoxAvailability = selectChannel === activeChannel ? <MessageBox addMessages={addMessages} messageRef={messageRef}/> : ''
   return (
     <div className='messages-section'>
         <div className="messages-section_header">

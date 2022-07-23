@@ -10,7 +10,6 @@ type MessageListProps = {
 }
 
 const MessageList = ({messageList}:MessageListProps) => {
-    
     let messageText = messageList.map((messageInList: messages) => {
         return (<MessagesComponent
             key={messageInList.message} message={messageInList.message} />

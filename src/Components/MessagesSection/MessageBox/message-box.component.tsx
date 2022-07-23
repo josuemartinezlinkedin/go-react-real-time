@@ -6,21 +6,24 @@ type messages = {
 }
 type MessageBoxProps = {
     addMessages: (message: string) => void;
-    // messagesMap: Map<string, messages[]>
+    // messagesMap: Map<string, messages[]>;
+    messageRef: React.RefObject<HTMLInputElement> | null
+
 }
 
-function MessageBox({addMessages}:MessageBoxProps) {
+function MessageBox({addMessages, messageRef}:MessageBoxProps) {
 
 
     const [aMessage, setAMessage] = useState('')
-
+    
     
 
     function onChange(e: React.ChangeEvent<HTMLInputElement>) {
         setAMessage(e.target.value)
     }
     // function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    const onSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent) => {
+    const onSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent) =>
+     {
         e.preventDefault()
         addMessages(aMessage)
         setAMessage('')
@@ -29,7 +32,7 @@ function MessageBox({addMessages}:MessageBoxProps) {
   return (
     <>
     <form className='message-form' id="message-form" onSubmit={onSubmit}>
-        <input className='message-form_input' onChange={onChange} value={aMessage} 
+        <input ref={messageRef} className='message-form_input' onChange={onChange} value={aMessage} 
         placeholder="Add Message" type="text" name="addToMessages" id="props.message" />
         
         <button className='message-form_bttn' type="submit" form="message-form" 

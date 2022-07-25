@@ -5,13 +5,13 @@ type messages = {
     message: string
 }
 type MessageBoxProps = {
-    addMessages: (message: string) => void;
+    addMessages: (message:string, user: string, time: Date) => void;
     // messagesMap: Map<string, messages[]>;
-    messageRef: React.RefObject<HTMLInputElement> | null
-
+    messageRef: React.RefObject<HTMLInputElement> | null;
+    user: string;
 }
 
-function MessageBox({addMessages, messageRef}:MessageBoxProps) {
+function MessageBox({addMessages, messageRef, user}:MessageBoxProps) {
 
 
     const [aMessage, setAMessage] = useState('')
@@ -25,7 +25,8 @@ function MessageBox({addMessages, messageRef}:MessageBoxProps) {
     const onSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent) =>
      {
         e.preventDefault()
-        addMessages(aMessage)
+        const timeNow = new Date()
+        addMessages(aMessage, user, timeNow)
         setAMessage('')
     }
   

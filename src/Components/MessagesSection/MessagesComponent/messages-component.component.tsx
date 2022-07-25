@@ -1,18 +1,24 @@
 
 type messages = {
-  // userName?: string,
-  message: string
+  message: string;
+  user: string;
+  time: Date
 }
 
-function MessagesComponent({message}: messages) {
+function MessagesComponent({message, user, time}: messages) {
+  console.log(message, user, time)
   return (
-    <>
-      <li className='channel-list-item'>
-        <a>
+      <div className='message-container message-sent'>
+      <p className="message_name">
+        <span><b>{user}</b></span>
+        {' ' + time.toString()}
+      </p>
+        <p className="message">
+          <i>
           {message}
-        </a>
-      </li>
-    </>
+          </i>
+        </p>
+      </div>
   )
 }
 

@@ -136,6 +136,27 @@ code {
     background-color: antiquewhite;
 }
 
+.message-container {
+  list-style-type: none;
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 5px 0;
+  color:cadetblue;
+     
+}
+.message-sent {
+  /* border-color: #ccc;
+  background-color: #ddd; */
+  border-color: cornflowerblue;
+  background-color: #303030;
+}
+.message-received {
+  border-color:cornflowerblue;
+  background-color:#303030;
+}
+
 .message-section_messages_box {
 background-color: grey;
 padding: 20px 25px;
@@ -167,8 +188,14 @@ max-height: 85vh;
   background-color: aquamarine;
   color: hotpink
 }
-
-
+.message{
+  text-align: left;
+}
+.message_name {
+  padding-top: 5px;
+  text-align: left;
+  font-size: 10px;
+}
 
 
 /*

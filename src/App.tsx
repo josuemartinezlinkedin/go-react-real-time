@@ -36,7 +36,7 @@ function App() {
       <ChannelSection addChannel={addChannel} channelList={channelList} setActiveChannel={setActiveChannel} activeChannel={activeChannel}/>
         <UserSection activeUser={activeUser} setActiveUser={setActiveUser} userList={usersList} setUserList={setUserList}/>
       </div>
-      <MessagesSection activeChannel={activeChannel} />
+      <MessagesSection activeChannel={activeChannel} activeUser={activeUser}/>
       <div>
       </div>
     </div>

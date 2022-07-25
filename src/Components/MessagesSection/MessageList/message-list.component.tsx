@@ -1,18 +1,19 @@
-import React from 'react'
 import MessagesComponent from '../MessagesComponent/messages-component.component'
 
 type messages = {
-    // userName?: string,
-    message: string
+    message: string;
+    user: string;
+    time: Date
 }
 type MessageListProps = {
     messageList: messages[]
 }
 
 const MessageList = ({messageList}:MessageListProps) => {
+
     let messageText = messageList.map((messageInList: messages) => {
         return (<MessagesComponent
-            key={messageInList.message} message={messageInList.message} />
+            key={messageInList.message} message={messageInList.message} user={messageInList.user} time={messageInList.time} />
         )
     }
     )

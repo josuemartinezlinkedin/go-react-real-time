@@ -1,6 +1,5 @@
 import ChannelForm from "./ChannelForm/channel-form.component";
 import ChannelList from "./ChannelList/channel-list.component";
-import { useEffect, useState} from "react";
 
 import './channel-section.styles.css'
 type nameOfChannel = {

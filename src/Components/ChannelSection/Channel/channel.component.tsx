@@ -43,7 +43,6 @@ const Channel = ({channel, setActiveChannel, activeChannel}: ChannelProps) => {
 
     const onClick: React.MouseEventHandler<HTMLLIElement> = (e: React.MouseEvent) => {
         e.preventDefault();
-        alert("i've been clicked");
         return setActiveChannel(channel.name)
     }
 

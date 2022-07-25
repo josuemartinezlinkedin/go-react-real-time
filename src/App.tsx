@@ -7,7 +7,7 @@ type nameOfChannel = {
 }
 type User = {
   userName: string;
-  userId: number;
+  userId: string;
 }
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
       <header className="App-header" />
       <div className='app_row'>
       <ChannelSection addChannel={addChannel} channelList={channelList} setActiveChannel={setActiveChannel} activeChannel={activeChannel}/>
-        <UserSection />
+        <UserSection activeUser={activeUser} setActiveUser={setActiveUser} userList={usersList} setUserList={setUserList}/>
       </div>
       <MessagesSection activeChannel={activeChannel} />
       <div>

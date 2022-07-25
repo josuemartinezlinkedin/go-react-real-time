@@ -24,12 +24,12 @@ const UserForm = ({ addUser }: UserFormProps) => {
 
     return (
         <>
-            <form className='channel-form' id="channelform" onSubmit={onSubmit}>
-                <input className='channel-form_input' onChange={onChange}
+            <form className='user-form' id="userform" onSubmit={onSubmit}>
+                <input className='user-form_input' onChange={onChange}
                     value={userName} placeholder="Add User" type="text"
                     name="addToList" id="props.name" />
-                <button className='channel-form_bttn' type="submit"
-                    form="channelform" value="Submit">Add Me!!</button>
+                <button className='user-form_bttn' type="submit"
+                    form="userform" value="Submit">Add Me!!</button>
             </form>
         </>
     )

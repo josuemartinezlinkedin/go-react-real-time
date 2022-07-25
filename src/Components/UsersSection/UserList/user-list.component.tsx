@@ -23,11 +23,11 @@ const UsersComponent = ({ name, setActiveUser, activeUser }: UsersComponentProps
         alert("i've been clicked");
         return setActiveUser(name)
     }
-    const active = name === activeUser ? 'channel_name-active' : 'channel_name'
+    const active = name === activeUser ? 'user_name-active' : 'user_name'
     return (
         <>
-            <li className='channel-list-item' onClick={onClick}>
-                <a>
+            <li className='user-list-item' onClick={onClick}>
+                <a className={active}>
                     {name}
                 </a>
             </li>

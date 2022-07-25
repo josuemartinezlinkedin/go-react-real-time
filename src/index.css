@@ -176,7 +176,7 @@ max-height: 85vh;
 ******************************************************************************************************************************
 ******************************************************************************************************************************
 ******************************************************************************************************************************
-                                Message Section Component styles
+                                User Section Component styles
 ******************************************************************************************************************************
 ******************************************************************************************************************************
 ******************************************************************************************************************************
@@ -192,7 +192,7 @@ max-height: 85vh;
     background-color: antiquewhite;
 }
 
-.user-section_messages_box {
+.user-section_area {
   background-color: grey;
   padding: 20px 25px;
   height: 100%;
@@ -204,7 +204,7 @@ max-height: 85vh;
   text-align: center;
 }
 
-.user_name_messages {
+.user_name_header {
   padding: 10px;
   color: antiquewhite;
   border-radius: 10px;
@@ -213,3 +213,48 @@ max-height: 85vh;
   text-align: center;
   border: 3px inset #303030;
 }
+.user-form .user-form_input {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.user_name {
+  padding: 10px;
+  color: black;
+  width: fit-content;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.user_name:hover {
+  color: antiquewhite;
+}
+
+.user_name-active {
+  padding: 10px;
+  color: antiquewhite;
+  width: fit-content;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.user-list-item {
+  list-style-type: none;
+
+}
+
+.user-form_bttn {
+  background-color: darkcyan;
+  color: rgb(6, 1, 93);
+  cursor: pointer;
+}
+
+.user-form_bttn:hover {
+  border: 1.5px solid aqua;
+  background-color: aquamarine;
+  color: hotpink
+}
+

@@ -27,8 +27,8 @@ const UserSection = ({ activeUser, setActiveUser, userList, setUserList}: UserSe
           <div className="user-section_header">
               <h4 className='user_section_header-tag'>Users</h4>
           </div>
-          <div className="user-section_messages_box" >
-              <h3 className='user_name_messages'>{activeUser === ''? 'log in' :activeUser}</h3>
+          <div className="user-section_area" >
+              <h3 className='user_name_header'>{activeUser === ''? 'log in' :activeUser}</h3>
               <UserList userList={userList} activeUser={activeUser} setActiveUser={setActiveUser}/>
               <UserForm addUser={addUser}/>
           </div>

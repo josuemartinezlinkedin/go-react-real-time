@@ -1,17 +1,97 @@
 import {useState, useEffect, useRef} from 'react'
-import MessageBox from './MessageBox/message-box.component'
-import MessageList from './MessageList/message-list.component'
 
-type MessagesSectionProps = {
-    activeChannel: string;
-    activeUser: string
-}
+
 type messages = {
     message: string;
     user: string;
     time: Date
 }
+type MessagesSectionProps = {
+    activeChannel: string;
+    activeUser: string
+}
+type MessageBoxProps = {
+    addMessages: (message: string, user: string, time: Date) => void;
+    // messagesMap: Map<string, messages[]>;
+    messageRef: React.RefObject<HTMLInputElement> | null;
+    user: string;
+}
+type MessageListProps = {
+    messageList: messages[]
+}
+
 let messagesMap = new Map<string, messages[]>()
+
+
+
+
+function MessagesComponent({ message, user, time }: messages) {
+    return (
+        <div className='message-container message-sent'>
+            <p className="message_name">
+                <span><b>{user}</b></span>
+                {' ' + time.toString()}
+            </p>
+            <p className="message">
+                <i>
+                    {message}
+                </i>
+            </p>
+        </div>
+    )
+}
+
+
+const MessageList = ({ messageList }: MessageListProps) => {
+
+    let messageText = messageList.map((messageInList: messages) => {
+        return (<MessagesComponent
+            key={messageInList.message} message={messageInList.message} user={messageInList.user} time={messageInList.time} />
+        )
+    }
+    )
+    return (
+        <div>
+            <ul>
+                {messageText}
+            </ul>
+        </div>
+    )
+}
+
+
+
+function MessageBox({ addMessages, messageRef, user }: MessageBoxProps) {
+
+
+    const [aMessage, setAMessage] = useState('')
+
+
+
+    function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+        setAMessage(e.target.value)
+    }
+    // function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    const onSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent) => {
+        e.preventDefault()
+        const timeNow = new Date()
+        addMessages(aMessage, user, timeNow)
+        setAMessage('')
+    }
+
+    return (
+        <>
+            <form className='message-form' id="message-form" onSubmit={onSubmit}>
+                <input ref={messageRef} className='message-form_input' onChange={onChange} value={aMessage}
+                    placeholder="Add Message" type="text" name="addToMessages" id="props.message" />
+
+                <button className='message-form_bttn' type="submit" form="message-form"
+                    value="Submit" >Add Me!!</button>
+            </form>
+        </>
+    )
+}
+
 
 function MessagesSection({activeChannel, activeUser}: MessagesSectionProps) {  
     //useState
